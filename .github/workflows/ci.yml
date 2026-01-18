@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore
+        run: dotnet restore FlowVacSitePlanner.sln
+
+      - name: Build
+        run: dotnet build FlowVacSitePlanner.sln --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test FlowVacSitePlanner.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+
+      - name: Shard schema validation
+        run: dotnet test src/FlowVacSitePlanner.Tests/FlowVacSitePlanner.Tests.csproj --filter "Category=ShardSchema"
