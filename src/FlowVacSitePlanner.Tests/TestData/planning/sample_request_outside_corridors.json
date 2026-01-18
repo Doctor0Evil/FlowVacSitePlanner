@@ -1,0 +1,51 @@
+{
+  "grammarVersionId": "ecosafety-grammar-v1",
+  "scenarioId": "ci_outside_corridor_low_eco",
+  "plannerLabel": "ci-test-outside",
+  "shards": [
+    {
+      "shardId": "corridor:demo:1",
+      "type": "corridor_parameters",
+      "schemaDid": "did:example:schema:corridor_parameters:v1",
+      "grammarVersionId": "ecosafety-grammar-v1",
+      "payload": {
+        "geometry": {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [-112.1800, 33.5400],
+                [-112.1800, 33.5600],
+                [-112.1400, 33.5600],
+                [-112.1400, 33.5400],
+                [-112.1800, 33.5400]
+              ]
+            ]
+          },
+          "properties": {
+            "zoning": "sprawl_only"
+          }
+        }
+      }
+    },
+    {
+      "shardId": "eco_kernel:demo:1",
+      "type": "eco_impact_kernel",
+      "schemaDid": "did:example:schema:eco_impact_kernel:v1",
+      "grammarVersionId": "ecosafety-grammar-v1",
+      "payload": {
+        "target_sprawl_reduction_percent": 12.0
+      }
+    },
+    {
+      "shardId": "risk:demo:1",
+      "type": "risk_of_harm_metadata",
+      "schemaDid": "did:example:schema:risk_of_harm_metadata:v1",
+      "grammarVersionId": "ecosafety-grammar-v1",
+      "payload": {
+        "risk_of_harm": 0.14
+      }
+    }
+  ]
+}
