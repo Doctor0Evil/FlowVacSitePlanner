@@ -1,0 +1,28 @@
+{
+  "shardId": "corridor:demo:1",
+  "type": "corridor_parameters",
+  "schemaDid": "did:example:schema:corridor_parameters:v1",
+  "grammarVersionId": "ecosafety-grammar-v1",
+  "payload": {
+    "name": "Demo transit-aligned corridor",
+    "geometry": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-112.0800, 33.4400],
+            [-112.0800, 33.4600],
+            [-112.0400, 33.4600],
+            [-112.0400, 33.4400],
+            [-112.0800, 33.4400]
+          ]
+        ]
+      },
+      "properties": {
+        "zoning": "mixed_use",
+        "max_risk_of_harm": 0.2
+      }
+    }
+  }
+}
