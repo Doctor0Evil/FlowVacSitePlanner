@@ -1,0 +1,32 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE
+.vs/
+.idea/
+*.DotSettings
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure & secrets
+local.settings.json
+*.ps1
+*.pubxml
+*.publishsettings
+
+# Rider
+*.sln.iml
